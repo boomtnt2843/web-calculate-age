@@ -1,8 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: 'PoppinsRegular';
-  -webkit-font-smoothing: 'PoppinsRegular';
-  -moz-osx-font-smoothing: 'PoppinsRegular';
+  font-family: 'Poppins';
+  -webkit-font-smoothing: 'Poppins';
+  -moz-osx-font-smoothing: 'Poppins';
 }
 
 code {
@@ -11,37 +15,22 @@ code {
 }
 
 @font-face {
-  font-family: "PoppinsBold";   
+  font-family: "Poppins";   
   src: local("PoppinsBold"),
     url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 @font-face {
-  font-family: "PoppinsBoldItalic";   
-  src: local("PoppinsBoldItalic"),
-    url("./fonts/Poppins-BoldItalic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "PoppinsExtraBold";   
+  font-family: "Poppins";   
   src: local("PoppinsExtraBold"),
     url("./fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
 }
 
 @font-face {
-  font-family: "PoppinsExtraBoldItalic";   
-  src: local("PoppinsExtraBoldItalic"),
-    url("./fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "PoppinsItalic";   
-  src: local("PoppinsItalic"),
-    url("./fonts/Poppins-Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "PoppinsRegular";   
+  font-family: "Poppins";   
   src: local("PoppinsRegular"),
     url("./fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
