@@ -12,16 +12,16 @@ function App() {
   const [calYear, setCalYear] = useState<number>();
 
   const calAge = () => {
-    const dateNow = dayjs()
-    var startDate = new Date(Number(year), Number(month)-1, Number(day))
-    const formatDate = dayjs(startDate)
-    const totalDay = dateNow.diff(formatDate, 'day')
-    const totalMonth = dateNow.diff(formatDate, 'month')
-    const totalYear = dateNow.diff(formatDate, 'year')
-    setCalDay(totalDay % 30)
-    setCalMonth(totalMonth % 12)
-    setCalYear(totalYear)
-  }
+    const dateNow = dayjs();
+    var startDate = new Date(Number(year), Number(month) - 1, Number(day));
+    const formatDate = dayjs(startDate);
+    const totalDay = dateNow.diff(formatDate, "day");
+    const totalMonth = dateNow.diff(formatDate, "month");
+    const totalYear = dateNow.diff(formatDate, "year");
+    setCalDay(Math.floor(totalDay % 365 % 30));
+    setCalMonth(totalMonth % 12);
+    setCalYear(totalYear);
+  };
 
   return (
     <div className="flex min-h-screen w-screen bg-off-white justify-center items-center">
@@ -68,7 +68,10 @@ function App() {
                 maxLength={4}
               />
             </div>
-            <button className="bg-light-purple w-16 h-16 p-4 rounded-full absolute bottom-[-32px] right-0 hover:bg-black transition-colors duration-200" onClick={calAge}>
+            <button
+              className="bg-light-purple w-16 h-16 p-4 rounded-full absolute bottom-[-32px] right-0 hover:bg-black transition-colors duration-200"
+              onClick={calAge}
+            >
               {" "}
               <img src={Arrow} alt="arrow-submit" />
             </button>
@@ -77,13 +80,22 @@ function App() {
         {/* display-section */}
         <div>
           <h1 className="font-extrabold text-7xl italic">
-            <span className="text-light-purple">{calYear || calYear === 0 ? calYear : "- -"}</span> years
+            <span className="text-light-purple">
+              {calYear || calYear === 0 ? calYear : "- -"}
+            </span>{" "}
+            years
           </h1>
           <h1 className="font-extrabold text-7xl italic">
-            <span className="text-light-purple">{calMonth || calMonth === 0 ? calMonth : "- -"}</span> months
+            <span className="text-light-purple">
+              {calMonth || calMonth === 0 ? calMonth : "- -"}
+            </span>{" "}
+            months
           </h1>
           <h1 className="font-extrabold text-7xl italic">
-            <span className="text-light-purple">{calDay || calDay === 0 ? calDay : "- -"}</span> days
+            <span className="text-light-purple">
+              {calDay || calDay === 0 ? calDay : "- -"}
+            </span>{" "}
+            days
           </h1>
         </div>
       </div>
